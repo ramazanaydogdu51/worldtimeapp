@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -14,22 +13,14 @@ class Loading extends StatefulWidget {
 
 class _LoadingState extends State<Loading> {
 
-  void getData () async{
-    final url = Uri.parse('https://jsonplaceholder.typicode.com/todos/1');
-    final response = await http.get(url);
-      print(response.body);
 
-     Map dataList= jsonDecode(response.body);
-     print(dataList);
-     print(dataList['title']);
-  }
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
   print('test');
-    getData ();
+    getTime ();
   }
   @override
   Widget build(BuildContext context) {
