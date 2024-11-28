@@ -8,11 +8,14 @@ class WorldTime {
   late String location;
   late String time;
   late String flag;
-   late String url; // location url for the api endpoint
+  late String url; // location url for the api endpoint
 
 
-  void getTime () async{
+  WorldTime ({required this.location, required this.flag, required this.url});
+
+  Future <void> getTime () async{
     final endpoint = Uri.parse('https://timeapi.io/api/time/current/zone?timeZone=Europe%2F$url');
+    print('endpoint = '+ endpoint.toString());
     final response = await http.get(endpoint);
     print(response.body);
 
@@ -22,8 +25,9 @@ class WorldTime {
     DateTime now=  DateTime.parse(dataList['dateTime']);
     print(now);
 
-    now =now.add(Duration(hours: 1 ,minutes: 30));
+    //now =now.add(Duration(hours: 1 ,minutes: 30));
     print(now);
+    time = now.toString();
 
   }
 
