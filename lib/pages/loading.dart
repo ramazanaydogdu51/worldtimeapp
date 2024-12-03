@@ -39,7 +39,7 @@ class _LoadingState extends State<Loading> {
       body: Center(
          child:  SpinKitThreeInOut( //burada SpinKit den sonra olan bir class adını verirsen degir
             color: Colors.white,
-            size: 80.0,
+            size: 81.0,
           ),
       ),
     );
