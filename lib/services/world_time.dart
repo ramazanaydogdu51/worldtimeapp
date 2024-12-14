@@ -9,6 +9,8 @@ class WorldTime {
   late String time;
   late String flag;
   late String url; // location url for the api endpoint
+  late bool isDayTime;  // true or false if daytime or not
+
 
   WorldTime({required this.location, required this.flag, required this.url});
 
@@ -28,6 +30,7 @@ class WorldTime {
 
       //now =now.add(Duration(hours: 1 ,minutes: 30));
       print(now);
+      isDayTime = now.hour > 6 && now.hour < 14   ?   true  : false    ;
       time = DateFormat.jm().format(now);
 
     } catch (e) {
